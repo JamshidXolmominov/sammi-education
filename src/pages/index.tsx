@@ -3,10 +3,12 @@ import { Button, Card, Heading, Input, Rating, Tag, Text, TextArea } from '../co
 import axios from 'axios';
 import { GetServerSideProps } from 'next';
 import { withLayout } from '../layout/layout';
+import { MenuItem } from '../interfaces/menu.interface';
 
-const Index = () => {
+const Index = ({ firstCategory, menu }: HomeProps): JSX.Element => {
 	const [isClick, setIsClick] = useState(false);
 	const [rating, setRating] = useState<number>(4);
+	console.log(menu);
 
 	return (
 		<>
@@ -48,18 +50,31 @@ const Index = () => {
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat nesciunt error doloribus aperiam consectetur eius tempore
 				dolore at illum necessitatibus.
 			</Card>
+
+			<ul>
+				{menu.map(c => (
+					<li key={c._id.secondCategory}>{c._id.secondCategory}</li>
+				))}
+			</ul>
 		</>
 	);
 };
 
 export default withLayout(Index);
 
-export const getServerSideProps: GetServerSideProps = async () => {
-	const { data } = await axios.post(`${process.env.NEXT_PUBLIC_DOMAIN}/api/page-find`, { firstCategory: 1 });
+export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
+	const firstCategory = 0;
+	const { data: menu } = await axios.post<MenuItem[]>(`${process.env.NEXT_PUBLIC_DOMAIN}/api/page-find`, { firstCategory });
 
 	return {
 		props: {
-			data,
+			menu,
+			firstCategory,
 		},
 	};
 };
+
+interface HomeProps extends Record<string, unknown> {
+	firstCategory: number;
+	menu: MenuItem[];
+}
