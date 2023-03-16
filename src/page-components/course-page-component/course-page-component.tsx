@@ -1,7 +1,7 @@
 import { CoursePageComponentProps } from './course-page-component.props';
 import styles from './course-page-component.module.css';
 import cn from 'classnames';
-import { Heading, Tag } from '@/src/components';
+import { Heading, HhData, Tag } from '@/src/components';
 
 const CoursePageComponent = ({ firstCategory, page, products }: CoursePageComponentProps): JSX.Element => {
 	return (
@@ -24,7 +24,7 @@ const CoursePageComponent = ({ firstCategory, page, products }: CoursePageCompon
 			</div>
 
 			{/* HHDATA */}
-			<div>HHDATA</div>
+			{page.hh && <HhData {...page.hh} />}
 		</div>
 	);
 };
