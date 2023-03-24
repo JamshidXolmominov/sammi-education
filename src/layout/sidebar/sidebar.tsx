@@ -1,10 +1,10 @@
 import Menu from '../menu/menu';
-import { SidebarProps } from './sidebar.props';
+import { SidebarProps } from './header.props';
 import cn from 'classnames';
 import styles from './sidebar.module.css';
-import Logo from '../logo.svg';
 import Link from 'next/link';
-import { Divider, Search } from '@/src/components';
+import Logo from '../logo.svg';
+import { Divider, Search } from '../../components';
 
 const Sidebar = ({ className, ...props }: SidebarProps): JSX.Element => {
 	return (

@@ -8,7 +8,7 @@ const Footer = ({ className, ...props }: FooterProps): JSX.Element => {
 		<footer className={cn(className, styles.footer)} {...props}>
 			<div>Sammi © 2022 - {format(new Date(), 'yyyy')}. All right reserver</div>
 			<a href='#'>Terms of use</a>
-			<a href='#'>Privacy Police</a>
+			<a href='#'>Privacy Policy</a>
 		</footer>
 	);
 };

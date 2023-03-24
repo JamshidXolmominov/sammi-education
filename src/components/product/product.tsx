@@ -1,16 +1,16 @@
-import styles from './product.module.css';
-import cn from 'classnames';
 import { ProductProps } from './product.props';
+import styles from './product.module.css';
 import Card from '../card/card';
 import Image from 'next/image';
-import { convertToUSD, detectedReview } from '@/src/helpers/helpers';
-import Tag from '../tag/tag';
+import { convertToUSD, dedectedReview } from '../../helpers/helpers';
 import Rating from '../rating/rating';
+import Tag from '../tag/tag';
 import Divider from '../divider/divider';
 import Button from '../button/button';
+import cn from 'classnames';
 import { ForwardedRef, forwardRef, useRef, useState } from 'react';
 import Review from '../review/review';
-import ReviewForm from '../review-form/review-form';
+import ReivewForm from '../reivew-form/reivew-form';
 import { motion } from 'framer-motion';
 
 const Product = motion(
@@ -33,6 +33,7 @@ const Product = motion(
 			setReviewOpen(true);
 			reviewRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 		};
+
 		return (
 			<div className={className} ref={ref} {...props}>
 				<Card className={styles.product}>
@@ -43,7 +44,7 @@ const Product = motion(
 					<div className={styles.price}>
 						{convertToUSD(product.price)}
 						{product.oldPrice && (
-							<Tag className={styles.oldPrice} color='green'>
+							<Tag color='green' className={styles.oldPrice}>
 								{convertToUSD(product.price - product.oldPrice)}
 							</Tag>
 						)}
@@ -66,7 +67,7 @@ const Product = motion(
 					<div className={styles.creditTitle}>Credit</div>
 					<div className={styles.rateTitle}>
 						<a href='#review' onClick={scrollToReview}>
-							{product.reviewCount} {detectedReview(product.reviewCount)}
+							{product.reviewCount} {dedectedReview(product.reviewCount)}
 						</a>
 					</div>
 
@@ -123,7 +124,7 @@ const Product = motion(
 								<Divider />
 							</div>
 						))}
-						<ReviewForm productId={product._id} />
+						<ReivewForm productid={product._id} />
 					</Card>
 				</motion.div>
 			</div>

@@ -1,6 +1,6 @@
+import { RatingProps } from './rating.props';
 import styles from './rating.module.css';
 import cn from 'classnames';
-import { RatingProps } from './rating.props';
 import { ForwardedRef, forwardRef, useEffect, useState } from 'react';
 import StarIcon from './star.svg';
 
@@ -19,8 +19,8 @@ const Rating = forwardRef(
 						[styles.filled]: idx < currentRating,
 						[styles.editable]: isEditabled,
 					})}
-					onMouseEnter={() => changeRatingDisplay(idx + 1)}
-					onMouseLeave={() => changeRatingDisplay(rating)}
+					onMouseEnter={() => chnageRatingDisplay(idx + 1)}
+					onMouseLeave={() => chnageRatingDisplay(rating)}
 					onClick={() => clickRatingHandler(idx + 1)}
 				>
 					<StarIcon />
@@ -30,7 +30,7 @@ const Rating = forwardRef(
 			setRatingArray(updateArray);
 		};
 
-		const changeRatingDisplay = (index: number) => {
+		const chnageRatingDisplay = (index: number) => {
 			if (!isEditabled) {
 				return;
 			}

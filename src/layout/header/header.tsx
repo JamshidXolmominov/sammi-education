@@ -2,7 +2,7 @@ import { HeaderProps } from './header.props';
 import styles from './header.module.css';
 import cn from 'classnames';
 import LogoIcon from '../logo.svg';
-import { IconButton } from '@/src/components';
+import { IconButton } from '../../components';
 import { useState } from 'react';
 import Sidebar from '../sidebar/sidebar';
 import { motion } from 'framer-motion';

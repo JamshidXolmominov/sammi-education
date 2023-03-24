@@ -1,10 +1,10 @@
-import { AppContext } from '@/src/context/app.context';
+import Link from 'next/link';
 import { useContext } from 'react';
+import { AppContext } from '../../context/app.cotext';
+import { firstLevelMenu } from '../../helpers/constants';
 import styles from './menu.module.css';
 import cn from 'classnames';
-import Link from 'next/link';
-import { firstLevelMenu } from '@/src/helpers/constants';
-import { IFirstLevelMenu, PageItem } from '@/src/interfaces/menu.interface';
+import { IFirstLevelMenu, PageItem } from '../../interfaces/menu.interface';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 
@@ -35,7 +35,8 @@ const Menu = (): JSX.Element => {
 			height: 0,
 		},
 	};
-	const openSecondBlock = (category: string) => {
+
+	const openSecondBLock = (category: string) => {
 		setMenu &&
 			setMenu(
 				menu.map(c => {
@@ -79,9 +80,10 @@ const Menu = (): JSX.Element => {
 					if (q.pages.map(p => p._id).includes(router.asPath.split('/')[2])) {
 						q.isOpened = true;
 					}
+
 					return (
 						<div key={q._id.secondCategory}>
-							<div className={styles.secondLevel} onClick={() => openSecondBlock(q._id.secondCategory)}>
+							<div className={styles.secondLevel} onClick={() => openSecondBLock(q._id.secondCategory)}>
 								{q._id.secondCategory}
 							</div>
 							<motion.div
@@ -100,13 +102,13 @@ const Menu = (): JSX.Element => {
 		);
 	};
 
-	const buildThirdLevel = (pages: PageItem[], route: string) => {
+	const buildThirdLevel = (pages: PageItem[], rotue: string) => {
 		return pages.map(p => (
 			<motion.div key={p._id} variants={variantsChildren}>
 				<Link
-					href={`/${route}/${p._id}`}
+					href={`/${rotue}/${p._id}`}
 					className={cn(styles.thirdLevel, {
-						[styles.thirdLevelActive]: `/${route}/${p._id}` === router.asPath,
+						[styles.thirdLevelActive]: `/${rotue}/${p._id}` === router.asPath,
 					})}
 				>
 					{p.title}

@@ -1,9 +1,9 @@
 import { CoursePageComponentProps } from './course-page-component.props';
 import styles from './course-page-component.module.css';
-import { Advantages, Heading, HhData, Product, Sort, Tag, Text } from '@/src/components';
+import { Advantages, Heading, HhData, Product, Sort, Tag, Text } from '../../components';
 import { useEffect, useReducer } from 'react';
 import { sortReducer } from './sort.reducer';
-import { SortEnum } from '@/src/components/sort/sort.props';
+import { SortEnum } from '../../components/sort/sort.props';
 import { AnimatePresence } from 'framer-motion';
 
 const CoursePageComponent = ({ page, products }: CoursePageComponentProps): JSX.Element => {
@@ -40,14 +40,14 @@ const CoursePageComponent = ({ page, products }: CoursePageComponentProps): JSX.
 			{/* PRODUCTS */}
 			<AnimatePresence>
 				{state.products &&
-					state.products.map((c, idx) => <Product key={idx} {...animations} layout transition={spring} product={c} />)}
+					state.products.map((c, idx) => <Product key={idx} layout transition={spring} {...animations} product={c} />)}
 			</AnimatePresence>
 
 			{/* VACATIONS */}
 			<div className={styles.hhTitle}>
 				<Heading tag='h2'>Vacations - {page.category}</Heading>
 				<Tag color='red' size='m'>
-					hh.ru
+					hh.uz
 				</Tag>
 			</div>
 

@@ -1,6 +1,6 @@
 import styles from './scroll-up.module.css';
 import { motion } from 'framer-motion';
-import { useScrollY } from '@/src/hooks/useScrollY';
+import { useScrollY } from '../../hooks/useScrollY';
 import IconButton from '../icon-button/icon-button';
 
 const ScrollUp = () => {

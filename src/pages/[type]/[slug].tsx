@@ -4,8 +4,8 @@ import axios from 'axios';
 import { MenuItem } from '../../interfaces/menu.interface';
 import { PageModel } from '../../interfaces/page.interface';
 import { ProductModel } from '../../interfaces/product.interface';
-import { firstLevelMenu } from '@/src/helpers/constants';
-import { CoursePageComponent } from '@/src/page-components';
+import { firstLevelMenu } from '../../helpers/constants';
+import CoursePageComponent from '../../page-components/course-page-component/course-page-component';
 
 const Index = ({ products, firstCategory, page }: PageProps) => {
 	return <CoursePageComponent products={products} firstCategory={firstCategory} page={page} />;

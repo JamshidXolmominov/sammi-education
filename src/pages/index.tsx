@@ -1,7 +1,7 @@
+import { GetServerSideProps } from 'next';
 import { useState } from 'react';
 import { Button, Card, Heading, Input, Rating, Tag, Text, TextArea } from '../components';
 import axios from 'axios';
-import { GetServerSideProps } from 'next';
 import { withLayout } from '../layout/layout';
 import { MenuItem } from '../interfaces/menu.interface';
 
@@ -41,13 +41,13 @@ const Index = (): JSX.Element => {
 			<Rating rating={rating} isEditabled={true} setRating={setRating} />
 
 			<Card color='white' style={{ marginTop: '30px' }}>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat nesciunt error doloribus aperiam consectetur eius tempore
-				dolore at illum necessitatibus.
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum sunt delectus ipsum accusantium. Quaerat necessitatibus
+				laborum cum quis veniam. Eveniet?
 			</Card>
 
 			<Card color='primary' style={{ marginTop: '30px' }}>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat nesciunt error doloribus aperiam consectetur eius tempore
-				dolore at illum necessitatibus.
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum sunt delectus ipsum accusantium. Quaerat necessitatibus
+				laborum cum quis veniam. Eveniet?
 			</Card>
 		</>
 	);

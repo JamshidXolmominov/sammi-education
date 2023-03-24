@@ -1,6 +1,6 @@
+import { IconButtonProps, icons } from './icon-button.props';
 import styles from './icon-button.module.css';
 import cn from 'classnames';
-import { IconButtonProps, icons } from './icon-button.props';
 
 const IconButton = ({ appearance, icon, className, ...props }: IconButtonProps): JSX.Element => {
 	const IconComponent = icons[icon];

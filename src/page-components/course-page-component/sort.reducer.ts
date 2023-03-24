@@ -1,5 +1,5 @@
-import { SortEnum } from '@/src/components/sort/sort.props';
-import { ProductModel } from '@/src/interfaces/product.interface';
+import { SortEnum } from '../../components/sort/sort.props';
+import { ProductModel } from '../../interfaces/product.interface';
 
 export type SortActions = { type: SortEnum.Price } | { type: SortEnum.Rating } | { type: 'reset'; initialState: ProductModel[] };
 
@@ -26,6 +26,6 @@ export const sortReducer = (state: SortReducerState, action: SortActions) => {
 				products: action.initialState,
 			};
 		default:
-			throw new Error('something went wrong');
+			throw new Error('Something went wrong');
 	}
 };

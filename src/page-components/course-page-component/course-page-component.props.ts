@@ -1,5 +1,5 @@
-import { PageCategory, PageModel } from '@/src/interfaces/page.interface';
-import { ProductModel } from '@/src/interfaces/product.interface';
+import { PageCategory, PageModel } from '../../interfaces/page.interface';
+import { ProductModel } from '../../interfaces/product.interface';
 
 export interface CoursePageComponentProps {
 	firstCategory: PageCategory;
